@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: elsa-portfolio
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    branch: main
+    nodeVersion: 20.12.2
