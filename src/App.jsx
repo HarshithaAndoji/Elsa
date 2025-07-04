@@ -1,4 +1,5 @@
 import "./App.css";
+import { BASE_URL } from  './apiConfig'
 import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProfilePic from "./assets/ProfilePic.jpeg";
@@ -107,7 +108,7 @@ function App() {
     setStatus("Sending...");
 
     try {
-      const res = await fetch("http://localhost:10000/api/contact", {
+      const res = await fetch(`${BASE_URL}/api/contact`, {
         // 🛠️ ADD `http://` to avoid network error
         method: "POST",
         headers: {
