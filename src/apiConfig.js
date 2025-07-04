@@ -6,7 +6,5 @@
 
 export const frontEndURL = `https://harshithaandoji.github.io/Elsa/`
 
-
- 
 export const BASE_URL = `https://elsa-rosn.onrender.com`
  

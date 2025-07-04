@@ -1,5 +1,5 @@
 import "./App.css";
-import { BASE_URL } from  './apiConfig'
+import { BASE_URL } from "./apiConfig";
 import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProfilePic from "./assets/ProfilePic.jpeg";
@@ -95,6 +95,8 @@ function App() {
   });
 
   const [status, setStatus] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -106,7 +108,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
-
+    setTimeout(() => setStatus(""), 3000);
     try {
       const res = await fetch(`${BASE_URL}/api/contact`, {
         // 🛠️ ADD `http://` to avoid network error
@@ -118,15 +120,22 @@ function App() {
       });
 
       if (res.ok) {
-        setStatus("Message sent!");
+        // setStatus("Message sent!");
+        setPopupMessage("Message sent successfully!");
+        setShowPopup(true);
+        console.log("Message sent!");
         setFormData({ name: "", email: "", message: "" });
       } else {
         const errorData = await res.json();
-        setStatus(`Failed: ${errorData.error || "Unknown error"}`);
+        // setStatus(`Failed: ${errorData.error || "Unknown error"}`);
+        setPopupMessage(`Failed: ${errorData.error || "Unknown error"}`);
+        setShowPopup(true);
+        console.log("Message not sent!");
       }
     } catch (err) {
       console.error(err);
-      setStatus("Error occurred.");
+      setStatus("Error occurred...Please try again later.");
+      setTimeout(() => setStatus(""), 3000);
     }
   };
 
@@ -286,31 +295,40 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
             <img src={ProfilePic} alt="Profile" class="profile-pic" />
           </div>
         </div>
-       <div className="about-container">
-  <h1 className="about-title">About <span id="letter">M</span>e</h1>
-  <div className="about-content">
-    <div className="about-text">
-      <p>
-        I'm <strong>Harshitha Andoji</strong>, a passionate Full Stack Developer with 2
-        years of experience building responsive and high-performance web
-        applications using the <strong>MERN Stack</strong> (MongoDB, Express.js,
-        React.js, Node.js). I specialize in intuitive UIs with React.js and robust
-        backends using Node.js, MySQL, and MongoDB.
-        <br /><br />
-        At <strong>eGRADTutor Academy</strong>, I led frontend development, implemented SSR,
-        lazy loading, JWT authentication, and managed CI/CD pipelines with GitHub Actions—
-        boosting performance by 30%.
-        <br /><br />
-        Previously, I built a real-time Stack Overflow clone during my internship at
-        <strong> Null Class</strong>, sharpening my skills in RESTful APIs and full-stack integration.
-        I'm certified in Front-End Development, Generative AI, and Programming Fundamentals.
-        <br /><br />
-        I love writing clean code and solving complex problems, and I'm currently seeking
-        opportunities to contribute to impactful tech teams.
-      </p>
-    </div>
-  </div>
-</div>
+        <div className="about-container">
+          <h1 className="about-title">
+            About <span id="letter">M</span>e
+          </h1>
+          <div className="about-content">
+            <div className="about-text">
+              <p>
+                I'm <strong>Harshitha Andoji</strong>, a passionate Full Stack
+                Developer with 2 years of experience building responsive and
+                high-performance web applications using the{" "}
+                <strong>MERN Stack</strong> (MongoDB, Express.js, React.js,
+                Node.js). I specialize in intuitive UIs with React.js and robust
+                backends using Node.js, MySQL, and MongoDB.
+                <br />
+                <br />
+                At <strong>eGRADTutor Academy</strong>, I led frontend
+                development, implemented SSR, lazy loading, JWT authentication,
+                and managed CI/CD pipelines with GitHub Actions— boosting
+                performance by 30%.
+                <br />
+                <br />
+                Previously, I built a real-time Stack Overflow clone during my
+                internship at
+                <strong> Null Class</strong>, sharpening my skills in RESTful
+                APIs and full-stack integration. I'm certified in Front-End
+                Development, Generative AI, and Programming Fundamentals.
+                <br />
+                <br />I love writing clean code and solving complex problems,
+                and I'm currently seeking opportunities to contribute to
+                impactful tech teams.
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* <div className="education-progress">
           <h1>Education</h1>
@@ -363,47 +381,49 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
             </div>
           </div>
         </div> */}
-<div id="education">
-  <h1 className="education-title">Education</h1>
-  <div className="timeline">
-    <div className="timeline-item">
-      <div className="logo-container">
-        <img src={StAnnsLogo} alt="St Anns" className="edu-logo" />
-      </div>
-      <div className="edu-info">
-        <p className="edu-institution">St. Ann's Junior College</p>
-        <p className="edu-degree">Intermediate</p>
-        <p className="edu-year">2017 - 2019</p>
-      </div>
-    </div>
+        <div id="education">
+          <h1 className="education-title">Education</h1>
+          <div className="timeline">
+            <div className="timeline-item">
+              <div className="logo-container">
+                <img src={StAnnsLogo} alt="St Anns" className="edu-logo" />
+              </div>
+              <div className="edu-info">
+                <p className="edu-institution">St. Ann's Junior College</p>
+                <p className="edu-degree">Intermediate</p>
+                <p className="edu-year">2017 - 2019</p>
+              </div>
+            </div>
 
-    <div className="timeline-bar"></div>
+            <div className="timeline-bar"></div>
 
-    <div className="timeline-item">
-      <div className="logo-container">
-        <img src={StPiousLogo} alt="St Pious" className="edu-logo" />
-      </div>
-      <div className="edu-info">
-        <p className="edu-institution">St. Pious X Degree And PG College</p>
-        <p className="edu-degree">B.Sc Computer Science</p>
-        <p className="edu-year">2019 - 2022</p>
-      </div>
-    </div>
+            <div className="timeline-item">
+              <div className="logo-container">
+                <img src={StPiousLogo} alt="St Pious" className="edu-logo" />
+              </div>
+              <div className="edu-info">
+                <p className="edu-institution">
+                  St. Pious X Degree And PG College
+                </p>
+                <p className="edu-degree">B.Sc Computer Science</p>
+                <p className="edu-year">2019 - 2022</p>
+              </div>
+            </div>
 
-    <div className="timeline-bar"></div>
+            <div className="timeline-bar"></div>
 
-    <div className="timeline-item">
-      <div className="logo-container">
-        <img src={OuLogo} alt="OU" className="edu-logo" />
-      </div>
-      <div className="edu-info">
-        <p className="edu-institution">PGRRCDE-Osmania University</p>
-        <p className="edu-degree">Master of Computer Applications</p>
-        <p className="edu-year">2022 - 2024</p>
-      </div>
-    </div>
-  </div>
-</div>
+            <div className="timeline-item">
+              <div className="logo-container">
+                <img src={OuLogo} alt="OU" className="edu-logo" />
+              </div>
+              <div className="edu-info">
+                <p className="edu-institution">PGRRCDE-Osmania University</p>
+                <p className="edu-degree">Master of Computer Applications</p>
+                <p className="edu-year">2022 - 2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div id="skills">
           <div>
@@ -442,7 +462,9 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
           </div>
         </div>
         <div className="contact-container">
-          <h1 className="contact-heading">Contact <span id="letter">M</span>e</h1>
+          <h1 className="contact-heading">
+            Contact <span id="letter">M</span>e
+          </h1>
 
           <div className="contact-content">
             {" "}
@@ -527,6 +549,15 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
               <button type="submit" className="submit-button">
                 Send Message
               </button>
+              <p>{status}</p>
+              {showPopup && (
+                <div className="popup-overlay">
+                  <div className="popup">
+                    <p>{popupMessage}</p>
+                    <button onClick={() => setShowPopup(false)}>OK</button>
+                  </div>
+                </div>
+              )}
             </form>
           </div>
         </div>

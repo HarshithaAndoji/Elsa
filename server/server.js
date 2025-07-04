@@ -17,10 +17,11 @@ app.get('/', async (req, res) => {
 
 app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
-console.log(req.body,"req.body")
+
   if (!email || !message || !name) {
     return res.status(400).json({ error: 'Missing fields' });
   }
+
 
   try {
     const transporter = nodemailer.createTransport({
@@ -31,17 +32,20 @@ console.log(req.body,"req.body")
       }
     });
 
-    await transporter.sendMail({
-      from: email,
-      to: process.env.EMAIL_USER,
-      subject: `New Contact Form Submission from ${name}`,
-      text: message
-    });
+await transporter.sendMail({
+  from: process.env.EMAIL_USER, // your authenticated email
+  to: process.env.EMAIL_USER,   // your inbox
+  subject: `New Contact Form Submission from ${name}`,
+  text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+  replyTo: email                 // so "Reply" will go to the user
+});
 
     res.status(200).json({ message: 'Message sent' });
+    console.log("Message sent!")
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to send email' });
+
   }
 });
 
