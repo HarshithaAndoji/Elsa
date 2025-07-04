@@ -107,7 +107,7 @@ function App() {
     setStatus("Sending...");
 
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
+      const res = await fetch("http://localhost:10000/api/contact", {
         // 🛠️ ADD `http://` to avoid network error
         method: "POST",
         headers: {

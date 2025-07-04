@@ -5,10 +5,15 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 app.use(cors());
 app.use(bodyParser.json());
+app.get('/', async (req, res) => {
+  console.log("Hello Server");
+  
+  res.status(200).json({ message: "Received successfully!" });
+});
 
 app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;

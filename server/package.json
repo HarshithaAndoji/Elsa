@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-      "dev": "vite",
-  "build": "vite build",
-  "start": "serve -s dist -l $PORT"
+    "dev": "vite",
+    "build": "vite build",
+  "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +16,9 @@
     "dotenv": "^17.0.1",
     "express": "^5.1.0",
     "nodemailer": "^7.0.4"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
+
