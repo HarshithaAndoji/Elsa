@@ -1,3 +1,27 @@
+
+@keyframes zoomInOut {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+/* @keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+} */
+
+@keyframes appear{
+  from{
+    opacity: 0;
+    scale: 0.4;
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+  }
+}
+
 /* ===== Navbar ===== */
 .navbar {
   position: fixed;
@@ -58,7 +82,18 @@ button {
   color: white;
   border: none;
 }
-
+.mouse-circle {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  background-color: rgba(56, 189, 248, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.05s ease-out;
+    box-shadow: 0 0 10px rgb(59 118 144 / 63%);
+}
 /* ===== Menu Toggle (hamburger / close) ===== */
 .menu-toggle {
   position: fixed;
@@ -126,6 +161,7 @@ button {
   gap: 2rem;
   flex-wrap: wrap;
   margin: 0 12rem;
+  
 }
 
 .text-content,
@@ -178,7 +214,7 @@ button {
   max-width: 250px;
   width: 100%;
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
 }
 
 .greeting,
@@ -220,6 +256,7 @@ button {
   justify-content: center;
   font-size: 1.3rem;
   cursor: pointer;
+      box-shadow: 0 2px 8px rgb(0 0 0);
   transition: box-shadow 0.3s ease;
 }
 
@@ -299,7 +336,7 @@ button {
   transition: all 0.3s ease;
 }
 #letter{
-color: rgb(49, 27, 252);
+color: rgb(0 122 204);
 }
 .about-title {
    font-size: 2.5rem;
@@ -452,7 +489,7 @@ color: rgb(49, 27, 252);
 }
 
 .skill-icon {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
@@ -525,7 +562,7 @@ color: rgb(49, 27, 252);
   color: #fff;
   opacity: 0;
   transition: opacity 0.4s ease;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -547,6 +584,7 @@ color: rgb(49, 27, 252);
   font-size: 0.95rem;
   line-height: 1.5;
   max-height: 200px;
+  padding:5px;
 }
 
 
@@ -578,8 +616,8 @@ color: rgb(49, 27, 252);
 }
 
 .contact-info {
-  flex: 1;
-  min-width: 280px;
+  /* flex: 1;
+  min-width: 280px; */
   background-color: #fff;
   padding: 2rem;
   border-radius: 1rem;
@@ -764,6 +802,7 @@ color: rgb(49, 27, 252);
 
   .navcontent {
     padding: 1rem 2rem;
+        margin: 0 1rem;
   }
 
   .intro_container {
@@ -774,9 +813,24 @@ color: rgb(49, 27, 252);
   .into_backdrop {
  
   padding-top: 4rem;
-  /* width: 100vw; */
+  width: 100vw;
+}
+.projects-container{
+    margin: 0 1rem;
+}
+#skills{
+      margin: 0px 1rem;
+}
+h1{
+ 
+    font-size: 2em;
 }
 
+    .icons {
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 1.2rem;
+    }
   .about-container {
     padding: 30px 20px;
     margin: 40px 20px;

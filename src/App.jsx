@@ -6,7 +6,7 @@ import ProfilePic from "./assets/ProfilePic.jpeg";
 import StAnnsLogo from "./assets/StAnnsLogo.jpg";
 import StPiousLogo from "./assets/StPiousLogo.jpg";
 import OuLogo from "./assets/OuLogo.jpg";
-import AboutMe from "./assets/AboutMe.jpeg";
+
 import OTS from "./assets/OTS.png";
 import PosterBannerTool from "./assets/PosterBannerTool.png";
 import UploadDocTool from "./assets/UploadDocTool.png";
@@ -150,11 +150,11 @@ function App() {
     { icon: <SiMysql />, name: "MySQL", color: "text-primary" },
     { icon: <SiMongodb />, name: "MongoDB", color: "text-success" },
     { icon: <FaCloud />, name: "Azure Blob", color: "text-info" },
-    {
-      icon: <i className="fas fa-network-wired" />,
-      name: "RESTful APIs",
-      color: "text-secondary",
-    },
+    // {
+    //   icon: <i className="fas fa-network-wired" />,
+    //   name: "RESTful APIs",
+    //   color: "text-secondary",
+    // },
   ];
 
   const cardRefs = useRef([]);
@@ -232,7 +232,7 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
               <FontAwesomeIcon icon={faEnvelope} /> Contact
             </li>
             <li>
-              <FontAwesomeIcon icon={faFileLines} /> Resume
+              <FontAwesomeIcon icon={faFileLines} /> Projects
             </li>
           </ul>
         </div>
@@ -302,87 +302,51 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
           <div className="about-content">
             <div className="about-text">
               <p>
-                I'm <strong>Harshitha Andoji</strong>, a passionate Full Stack
-                Developer with 2 years of experience building responsive and
-                high-performance web applications using the{" "}
-                <strong>MERN Stack</strong> (MongoDB, Express.js, React.js,
-                Node.js). I specialize in intuitive UIs with React.js and robust
-                backends using Node.js, MySQL, and MongoDB.
+                I'm <strong>Harshitha Andoji</strong>, a dedicated Full Stack
+                Developer with
+                <strong> nearly 2 years of professional experience</strong>{" "}
+                crafting responsive, scalable, and high-performance web
+                applications using the <strong>MERN Stack</strong> (MongoDB,
+                Express.js, React.js, Node.js), along with{" "}
+                <strong>MySQL</strong> for relational data needs.
                 <br />
                 <br />
-                At <strong>eGRADTutor Academy</strong>, I led frontend
-                development, implemented SSR, lazy loading, JWT authentication,
-                and managed CI/CD pipelines with GitHub Actions— boosting
-                performance by 30%.
+                Completed a <strong>1 year and 11-month tenure</strong> as a
+                Software Developer (SDE-1) at{" "}
+                <strong>eGRADTutor Academy.</strong> where I led the frontend
+                architecture and played a pivotal role in optimizing application
+                performance. My work included implementing{" "}
+                <strong>Server-Side Rendering (SSR)</strong>,
+                <strong> lazy loading</strong>,{" "}
+                <strong>JWT-based authentication</strong>, and setting up{" "}
+                <strong>CI/CD pipelines with GitHub Actions</strong> — efforts
+                that improved app speed and reliability by over{" "}
+                <strong>30%</strong>.
                 <br />
                 <br />
-                Previously, I built a real-time Stack Overflow clone during my
-                internship at
-                <strong> Null Class</strong>, sharpening my skills in RESTful
-                APIs and full-stack integration. I'm certified in Front-End
-                Development, Generative AI, and Programming Fundamentals.
+                Before that, I completed a{" "}
+                <strong>5-month internship at Null Class</strong>, where I built
+                a real-time Stack Overflow clone and honed my skills in
+                <strong> RESTful API design</strong>,{" "}
+                <strong>state management</strong>, and{" "}
+                <strong>full-stack integration</strong>. I'm certified in
+                Front-End Development, Generative AI, and Programming
+                Fundamentals.
                 <br />
                 <br />I love writing clean code and solving complex problems,
-                and I'm currently seeking opportunities to contribute to
-                impactful tech teams.
+                and I'm currently exploring new opportunities, I'm excited to
+                join a<strong> forward-thinking team</strong> where I can
+                contribute meaningfully, grow professionally, and help build
+                innovative solutions that make an impact.
               </p>
             </div>
           </div>
         </div>
 
-        {/* <div className="education-progress">
-          <h1>Education</h1>
-          <div className="progress-container">
-            <div className="circle">
-              <img src={StAnnsLogo} alt="St Anns" />
-            </div>
-            <div className="line" />
-            <div className="circle">
-              <img src={StPiousLogo} alt="St Pious" />
-            </div>
-            <div className="line" />
-            <div className="circle">
-              <img src={OuLogo} alt="OU" />
-            </div>
-          </div>
-        </div> */}
-        {/* <div className="education-progress">
-          <h1>Education</h1>
-          <div className="progress-container">
-            <div className="circle-container">
-              <div className="circle">
-                <img src={StAnnsLogo} alt="St Anns" />
-              </div>
-              <p className="edu-title">St. Ann's Junior College</p>
-              <p>Intermediate</p>
-              <p className="edu-year">2017 - 2019</p>
-            </div>
-
-            <div className="line" />
-
-            <div className="circle-container">
-              <div className="circle">
-                <img src={StPiousLogo} alt="St Pious" />
-              </div>
-              <p className="edu-title">St. Pious X Degree And PG College</p>
-              <p>B.Sc Computer Science</p>
-              <p className="edu-year">2019 - 2022</p>
-            </div>
-
-            <div className="line" />
-
-            <div className="circle-container">
-              <div className="circle">
-                <img src={OuLogo} alt="OU" />
-              </div>
-              <p className="edu-title">PGRRCDE-Osmania University</p>
-              <p>Master of Computer Applications</p>
-              <p className="edu-year">2022 - 2024</p>
-            </div>
-          </div>
-        </div> */}
         <div id="education">
-          <h1 className="education-title">Education</h1>
+          <h1 className="education-title">
+            <span id="letter">E</span>ducation
+          </h1>
           <div className="timeline">
             <div className="timeline-item">
               <div className="logo-container">
@@ -390,7 +354,7 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
               </div>
               <div className="edu-info">
                 <p className="edu-institution">St. Ann's Junior College</p>
-                <p className="edu-degree">Intermediate</p>
+                <p className="edu-degree">Intermediate (MPC)</p>
                 <p className="edu-year">2017 - 2019</p>
               </div>
             </div>
@@ -405,7 +369,7 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
                 <p className="edu-institution">
                   St. Pious X Degree And PG College
                 </p>
-                <p className="edu-degree">B.Sc Computer Science</p>
+                <p className="edu-degree">B.Sc Computer Science (MPCs)</p>
                 <p className="edu-year">2019 - 2022</p>
               </div>
             </div>
@@ -444,7 +408,9 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
           </div>
         </div>
         <div className="projects-container">
-          <h1 className="projects-title">Projects</h1>
+          <h1 className="projects-title">
+            <span id="letter">P</span>rojects
+          </h1>
           <div className="projects-grid">
             {projectData.map((proj, index) => (
               <div key={index} className="project-card">
@@ -516,6 +482,7 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+                  placeholder="Enter your name"
                 required
                 className="form-input"
               />
@@ -529,6 +496,7 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                  placeholder="Enter your email"
                 required
                 className="form-input"
               />
@@ -542,6 +510,7 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
                 rows="4"
                 value={formData.message}
                 onChange={handleChange}
+                  placeholder="Enter your message"
                 required
                 className="form-textarea"
               />
