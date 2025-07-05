@@ -1,4 +1,4 @@
-
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap'); */
 @keyframes zoomInOut {
   0% { transform: scale(0.5); opacity: 0; }
   50% { transform: scale(1.2); opacity: 1; }
@@ -21,6 +21,8 @@
     scale: 1;
   }
 }
+
+
 
 .reveal {
   opacity: 0;
@@ -121,7 +123,7 @@ button {
   color: white;
   border: none;
 }
-.mouse-circle {
+/* .mouse-circle {
   position: fixed;
   width: 25px;
   height: 25px;
@@ -132,7 +134,7 @@ button {
   z-index: 9999;
   transition: transform 0.05s ease-out;
     box-shadow: 0 0 10px rgb(59 118 144 / 63%);
-}
+} */
 /* ===== Menu Toggle (hamburger / close) ===== */
 .menu-toggle {
   position: fixed;
@@ -289,7 +291,7 @@ button {
 }
 
 .icons {
-  background-color: rgb(84, 162, 235);
+  background-color: #1e365e;
   border-radius: 25px;
   width: 2.5rem;
   height: 2.5rem;
@@ -372,7 +374,7 @@ button {
   max-width: 900px;
   margin: 60px auto;
   padding: 40px 30px;
-  /* background-color: #f9f9f9; */
+  background-color: #f9f9f9;
   border-radius: 20px;
   /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); */
   transition: all 0.3s ease;
@@ -403,7 +405,7 @@ color: rgb(0 122 204);
 }
 
 .about-text strong {
-  color: #7f5af0;
+  color: #1e365e;
   font-weight: 600;
 }
 
@@ -684,8 +686,11 @@ color: rgb(0 122 204);
 
 .info-heading {
   font-size: 1.3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: #495057;
+  text-decoration: underline;
+    color: #495057;
+
 }
 
 .info-item {
@@ -846,9 +851,14 @@ color: rgb(0 122 204);
     font-size: 0.95rem;
     line-height: 1.6;
   }
-
+   
 }
-
+@media (max-width:320){
+      .into_backdrop {
+        padding-top: 4rem;
+        width: 100vw;
+    }
+}
 /* ===== Responsive ===== */
 @media (max-width: 767.98px) {
   .navitems {
@@ -910,9 +920,25 @@ h1{
   .contact-form {
     width: 250px;
   }
+  .project-overlay h3{
+    margin: 0.5rem;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
+   .navitems {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navcontent {
+    padding: 1rem 2rem;
+        margin: 0 1rem;
+  }
+
   .navcontent {
     padding: 1rem 3rem;
   }
