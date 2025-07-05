@@ -22,6 +22,41 @@
   }
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.6s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.6s ease;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
 /* ===== Navbar ===== */
 .navbar {
   position: fixed;
@@ -71,10 +106,14 @@
   cursor: pointer;
   transition: color 0.3s ease;
   animation: bounceIn 0.6s ease forwards;
+ a{
+   color: white;
+ }
 }
 
-.navitems li:hover {
+.navitems li a:hover {
   color: #38bdf8;
+
 }
 
 button {
@@ -134,6 +173,9 @@ button {
   list-style: none;
   opacity: 0;
   transition: opacity 0.3s ease;
+   a{
+   color: white;
+ }
 }
 
 .mobile-menu.open {
@@ -514,78 +556,94 @@ color: rgb(0 122 204);
 
 .projects-container {
   padding: 2rem;
-  /* background-color: #f9f9f9; */
   text-align: center;
   margin: 0 9rem;
 }
-
-.projects-title {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+
+
+
 
 .project-card {
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  cursor: pointer;
+  height: 19rem;
 }
 
 .project-card:hover {
-  transform: scale(1.02);
-}
-
-.project-image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-  transition: filter 0.3s ease;
+  transform: scale(1.03);
 }
 
 .project-overlay {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  /* padding: 1.5rem; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
+    height: 7rem;
+
+  background: rgba(0, 0, 0, 0.85);
+ color: #95efff;
+  overflow: hidden;
+  transition: height 0.4s ease;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* On hover: expand to full height and allow scroll */
+.project-card:hover .project-overlay {
+  height: 100%;
   overflow-y: auto;
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
+/* Hide scrollbar */
+.project-overlay::-webkit-scrollbar {
+  display: none;
+}
+.project-overlay {
+  scrollbar-width: none;
 }
 
-.project-overlay h3 {
-  margin-bottom: 0.8rem;
-  font-size: 1.3rem;
-  color: #00b4d8;
+/* Text behavior */
+.project-overlay p {
+  color: white;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: white-space 0.4s ease;
+}
+
+.project-card:hover .project-overlay p {
+  white-space: normal;
+  overflow: visible;
 }
 
 .project-overlay p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  max-height: 200px;
-  padding:5px;
+  scrollbar-width: none; /* Firefox */
 }
+
+.project-overlay p::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -671,7 +729,7 @@ color: rgb(0 122 204);
 
 .contact-form {
   flex: 1;
-  min-width: 300px;
+  /* min-width: 300px; */
   background-color: #fff;
   padding: 2rem;
   border-radius: 1rem;
@@ -687,7 +745,8 @@ color: rgb(0 122 204);
 
 .form-input,
 .form-textarea {
-  width: 100%;
+  /* width: 100%; */
+  
   padding: 0.75rem;
   margin-bottom: 1.5rem;
   border: 1px solid #ced4da;
@@ -844,6 +903,13 @@ h1{
     font-size: 1rem;
     line-height: 1.7;
   }
+ .form-input, .form-textarea{
+      width: 230px;
+  }
+  .contact-info,
+  .contact-form {
+    width: 250px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -862,15 +928,25 @@ h1{
     flex-direction: column;
     align-items: center;
   }
-
+ .form-input, .form-textarea{
+      width: 230px;
+  }
   .contact-info,
   .contact-form {
-    width: 100%;
+    width: 230px;
+    
   }
 }
 
 @media (min-width: 992px) {
   .navitems li {
     font-size: 1rem;
+  }
+   .form-input, .form-textarea{
+      width: 100%;
+  }
+  .contact-info,
+  .contact-form {
+    width: 250px;
   }
 }

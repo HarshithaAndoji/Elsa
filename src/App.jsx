@@ -6,7 +6,7 @@ import ProfilePic from "./assets/ProfilePic.jpeg";
 import StAnnsLogo from "./assets/StAnnsLogo.jpg";
 import StPiousLogo from "./assets/StPiousLogo.jpg";
 import OuLogo from "./assets/OuLogo.jpg";
-
+import Resume from "../public/assets/Harshitha_Resume.pdf";
 import OTS from "./assets/OTS.png";
 import PosterBannerTool from "./assets/PosterBannerTool.png";
 import UploadDocTool from "./assets/UploadDocTool.png";
@@ -51,6 +51,25 @@ function App() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
+
+useEffect(() => {
+  const revealElements = document.querySelectorAll( ".reveal, .reveal-left, .reveal-right");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  revealElements.forEach((el) => observer.observe(el));
+
+  return () => observer.disconnect(); // cleanup on unmount
+}, []);
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
@@ -179,19 +198,18 @@ function App() {
   const projectData = [
     {
       img: OTS,
-      title: "Online Test Series",
-      desc: `Built dynamic versions with backend support for real-time exam series and video lecture interaction.
-Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback, solutions, and flexible test control.`,
+      title: "Online Test Series  and recorded video lectures Application",
+      desc: `This project is a web-based platform designed to offer online test series and recorded video lectures for students, with tools for educators to manage and evaluate assessments. It includes two versions: a static free version with open access to sample content, and a dynamic paid version with user authentication, role-based access, timed tests, result analytics, and security features like tab-switch detection and screen monitoring. Built using React.js, Node.js, Express.js, MongoDB, and JWT, the platform provides a secure and scalable solution for online learning and testing.`,
     },
     {
       img: PosterBannerTool,
       title: "Poster Banner Tool",
-      desc: "Built reusable UI components for managing banners efficiently within the website interface.",
+      desc: "Webbanners Editor is a web-based tool that allows users to upload, edit, and manage SVG promotional banners and posters. It provides an intuitive interface to modify text, colors, images, and other elements within the SVG file—no external design software needed. Users can make changes directly in the browser and save the updated version. The edited banners can then be instantly displayed on websites. This tool simplifies banner updates for admins and content managers, enabling quick, code-free customization.",
     },
     {
       img: UploadDocTool,
       title: "Document Upload Tool",
-      desc: "Developed a document uploader for text/images with secure, organized storage solutions.",
+      desc: "Document Upload & Question Paper is a tool that allows bulk uploading of documents containing multiple-choice question images, solution images, and video links. The system automatically extracts and saves each question, its options, correct answer, solution media, and metadata into the database under the selected test. This streamlines the process of adding 20–30 questions at once without manual entry. Once uploaded, the questions can be dynamically displayed on the platform for users to practice or review. It improves content management efficiency for test-based platforms.",
     },
     {
       img: GenzFit,
@@ -220,52 +238,75 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
           </div>
           <ul className="navitems">
             <li>
-              <FontAwesomeIcon icon={faHouse} /> Home
+              <a href="#home" className="reveal-right">
+                <FontAwesomeIcon icon={faHouse} /> Home
+              </a>
             </li>
             <li>
-              <FontAwesomeIcon icon={faUser} /> About Me
+              <a href="#about" className="reveal-right">
+                <FontAwesomeIcon icon={faUser} /> About Me
+              </a>
             </li>
             <li>
-              <FontAwesomeIcon icon={faLaptopCode} /> Tech Stack
+              <a href="#skills" className="reveal-right">
+                <FontAwesomeIcon icon={faLaptopCode} /> Tech Stack
+              </a>
             </li>
             <li>
-              <FontAwesomeIcon icon={faEnvelope} /> Contact
+              <a href="#contact" className="reveal-right">
+                <FontAwesomeIcon icon={faEnvelope} /> Contact
+              </a>
             </li>
             <li>
-              <FontAwesomeIcon icon={faFileLines} /> Projects
+              <a href="#projects" className="reveal-right">
+                <FontAwesomeIcon icon={faFileLines} /> Projects
+              </a>
             </li>
           </ul>
         </div>
       </div>
 
       <ul className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <li>
-          <FontAwesomeIcon icon={faHouse} /> Home
+        <li  className="reveal-right">
+          <a href="#home" >
+            <FontAwesomeIcon icon={faHouse} /> Home
+          </a>
         </li>
-        <li>
-          <FontAwesomeIcon icon={faUser} /> About Me
+        <li className="reveal-right">
+          <a href="#about" >
+            <FontAwesomeIcon icon={faUser} /> About Me
+          </a>
         </li>
-        <li>
-          <FontAwesomeIcon icon={faLaptopCode} /> Tech Stack
+        <li  className="reveal-right">
+          <a href="#skills" > 
+            <FontAwesomeIcon icon={faLaptopCode} /> Tech Stack
+          </a>
         </li>
-        <li>
-          <FontAwesomeIcon icon={faEnvelope} /> Contact
+        <li className="reveal-right">
+          <a href="#contact" >
+            <FontAwesomeIcon icon={faEnvelope} /> Contact
+          </a>
         </li>
-        <li>
-          <FontAwesomeIcon icon={faFileLines} /> Resume
+        <li className="reveal-right">
+          <a href="#projects" >
+            <FontAwesomeIcon icon={faFileLines} /> Projects
+          </a>
         </li>
       </ul>
+      
       <div className="into_backdrop">
-        <div class="intro_container">
+        <div class="intro_container" id="home">
+
+
           <div class="text_content">
-            <h1 className="greeting">Hi, I am</h1>
-            <h1 class="name">Harshitha Andoji</h1>
-            <h2 className="title">
+            <h1 className="greeting  reveal">Hi, I am</h1>
+            <h1 class="name reveal">Harshitha Andoji</h1>
+            <h2 className="title reveal">
               I am <span className="typing-text">{currentText}</span>
               <span className="cursor"></span>
             </h2>
 
-            <h3 class="description">
+            <h3 class="description reveal">
               I am a motivated and versatile individual, always eager to take on
               new challenges. With a passion for learning, I am dedicated to
               delivering high-quality results. I bring a positive attitude and a
@@ -273,35 +314,35 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
               and achieve great things.
             </h3>
             <div className="contact_icons">
-              <a href="mailto:andojiharshitha194@gmail.com" className="icons">
+              <a href="mailto:andojiharshitha194@gmail.com" className="icons reveal-right">
                 <FaEnvelope style={{ color: "white" }} className="icon" />
               </a>
 
-              <a href="tel:+919121325626" className="icons">
-                <FaPhoneAlt style={{ color: "white" }} className="icon" />
+              <a href="tel:+919121325626" className="icons reveal-right">
+                <FaPhoneAlt style={{ color: "white" }} className="icon " />
               </a>
 
               <a
                 href="https://www.linkedin.com/in/harshitha-andoji/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="icons"
+                className="icons reveal-right"
               >
                 <FaLinkedin style={{ color: "white" }} className="icon" />
               </a>
             </div>
           </div>
           <div class="image-content">
-            <img src={ProfilePic} alt="Profile" class="profile-pic" />
+            <img src={ProfilePic} alt="Profile" class="profile-pic reveal" />
           </div>
         </div>
-        <div className="about-container">
-          <h1 className="about-title">
+        <div className="about-container" id="about">
+          <h1 className="about-title reveal-left">
             About <span id="letter">M</span>e
           </h1>
           <div className="about-content">
             <div className="about-text">
-              <p>
+              <p className="reveal-right">
                 I'm <strong>Harshitha Andoji</strong>, a dedicated Full Stack
                 Developer with
                 <strong> nearly 2 years of professional experience</strong>{" "}
@@ -344,10 +385,10 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
         </div>
 
         <div id="education">
-          <h1 className="education-title">
+          <h1 className="education-title reveal-left">
             <span id="letter">E</span>ducation
           </h1>
-          <div className="timeline">
+          <div className="timeline reveal-right">
             <div className="timeline-item">
               <div className="logo-container">
                 <img src={StAnnsLogo} alt="St Anns" className="edu-logo" />
@@ -391,13 +432,13 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
 
         <div id="skills">
           <div>
-            <h1>Technologies I Worked On</h1>
+            <h1 className="reveal-left"><span id="letter">T</span>echnologies I <span id="letter">W</span>orked On</h1>
 
             <div className="skills-grid">
               {skillData.map((skill, index) => (
                 <div
                   key={index}
-                  className={`skill-card ${skill.color}`}
+                  className={`skill-card ${skill.color} reveal-right`}
                   ref={(el) => (cardRefs.current[index] = el)}
                 >
                   <div className="skill-icon">{skill.icon}</div>
@@ -407,13 +448,13 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
             </div>
           </div>
         </div>
-        <div className="projects-container">
-          <h1 className="projects-title">
+        <div className="projects-container" id="projects">
+          <h1 className="projects-title reveal-left">
             <span id="letter">P</span>rojects
           </h1>
           <div className="projects-grid">
             {projectData.map((proj, index) => (
-              <div key={index} className="project-card">
+              <div key={index} className="project-card reveal-right">
                 <img
                   src={proj.img}
                   alt={proj.title}
@@ -427,15 +468,15 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
             ))}
           </div>
         </div>
-        <div className="contact-container">
-          <h1 className="contact-heading">
+        <div className="contact-container" id="contact">
+          <h1 className="contact-heading reveal-left">
             Contact <span id="letter">M</span>e
           </h1>
 
           <div className="contact-content">
             {" "}
             {/* Flex Container for Side-by-Side */}
-            <div className="contact-info">
+            <div className="contact-info reveal-right">
               <h5 className="info-heading">Contact Information</h5>
 
               <p className="info-item">
@@ -468,11 +509,16 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
                 </a>
               </p>
 
-              <a href="/resume.pdf" download className="download-resume">
+              <a
+                href={Resume}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaDownload className="icon" /> Download Resume
               </a>
             </div>
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form onSubmit={handleSubmit} className="contact-form reveal-right">
               <label htmlFor="name" className="form-label">
                 Name
               </label>
@@ -482,7 +528,7 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                  placeholder="Enter your name"
+                placeholder="Enter your name"
                 required
                 className="form-input"
               />
@@ -496,7 +542,7 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                  placeholder="Enter your email"
+                placeholder="Enter your email"
                 required
                 className="form-input"
               />
@@ -510,7 +556,7 @@ Practice Question Bank (PQB) created for IIT JEE aspirants with instant feedback
                 rows="4"
                 value={formData.message}
                 onChange={handleChange}
-                  placeholder="Enter your message"
+                placeholder="Enter your message"
                 required
                 className="form-textarea"
               />
