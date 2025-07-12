@@ -400,7 +400,8 @@ color: rgb(0 122 204);
   font-size: 1.1rem;
   color: #444;
   line-height: 1.8;
-  text-align: justify;
+  /* text-align: justify; */
+  text-align:left;
   word-break: break-word;
 }
 
@@ -751,7 +752,7 @@ color: rgb(0 122 204);
 .form-input,
 .form-textarea {
   /* width: 100%; */
-  
+  font-family: cursive;
   padding: 0.75rem;
   margin-bottom: 1.5rem;
   border: 1px solid #ced4da;

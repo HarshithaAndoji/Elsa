@@ -1,0 +1,52 @@
+[
+  {
+    "icon": "FaHtml5",
+    "name": "HTML5",
+    "color": "text-danger"
+  },
+  {
+    "icon": "FaCss3Alt",
+    "name": "CSS3",
+    "color": "text-primary"
+  },
+  {
+    "icon": "FaJs",
+    "name": "JavaScript",
+    "color": "text-warning"
+  },
+  {
+    "icon": "FaReact",
+    "name": "ReactJS",
+    "color": "text-info"
+  },
+  {
+    "icon": "FaSass",
+    "name": "Sass",
+    "color": "text-pink"
+  },
+  {
+    "icon": "FaNodeJs",
+    "name": "NodeJS",
+    "color": "text-success"
+  },
+  {
+    "icon": "SiExpress",
+    "name": "ExpressJS",
+    "color": "text-dark"
+  },
+  {
+    "icon": "SiMysql",
+    "name": "MySQL",
+    "color": "text-primary"
+  },
+  {
+    "icon": "SiMongodb",
+    "name": "MongoDB",
+    "color": "text-success"
+  },
+  {
+    "icon": "FaCloud",
+    "name": "Azure Blob",
+    "color": "text-info"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "img": "/Elsa/assets/OTS.png",
+    "title": "Online Test Series  and recorded video lectures Application",
+    "desc": "This project is a web-based platform designed to offer online test series and recorded video lectures for students, with tools for educators to manage and evaluate assessments. It includes two versions: a static free version with open access to sample content, and a dynamic paid version with user authentication, role-based access, timed tests, result analytics, and security features like tab-switch detection and screen monitoring. Built using React.js, Node.js, Express.js, MongoDB, and JWT, the platform provides a secure and scalable solution for online learning and testing."
+  },
+  {
+    "img": "/Elsa/assets/PosterBannerTool.png",
+    "title": "Banner and Poster Edit Tool",
+    "desc": "Webbanners Editor is a web-based tool that allows users to upload, edit, and manage SVG promotional banners and posters. It provides an intuitive interface to modify text, colors, images, and other elements within the SVG file\u2014no external design software needed. Users can make changes directly in the browser and save the updated version. The edited banners can then be instantly displayed on websites. This tool simplifies banner updates for admins and content managers, enabling quick, code-free customization."
+  },
+  {
+    "img": "/Elsa/assets/UploadDocTool.png",
+    "title": "Document Upload Tool",
+    "desc": "Document Upload & Question Paper is a tool that allows bulk uploading of documents containing multiple-choice question images, solution images, and video links. The system automatically extracts and saves each question, its options, correct answer, solution media, and metadata into the database under the selected test. This streamlines the process of adding 20\u201330 questions at once without manual entry. Once uploaded, the questions can be dynamically displayed on the platform for users to practice or review. It improves content management efficiency for test-based platforms."
+  },
+  {
+    "img": "/Elsa/assets/GenzFit.png",
+    "title": "GenzFit Wellness App",
+    "desc": "Genzfit is a full-stack web application designed to help users maintain a healthy lifestyle by combining physical fitness, mental wellness, and daily habit tracking in one platform."
+  }
+]
