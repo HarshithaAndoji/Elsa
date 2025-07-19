@@ -1,6 +1,3 @@
-import React from 'react'
-
-
 import StAnnsLogo from "../assets/StAnnsLogo.jpg";
 import StPiousLogo from "../assets/StPiousLogo.jpg";
 import OuLogo from "../assets/OuLogo.jpg";

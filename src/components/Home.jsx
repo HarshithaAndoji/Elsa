@@ -1,11 +1,5 @@
-import React,{useState,useEffect} from "react";
-import {
-  FaEnvelope,
-  FaLinkedin,
-  FaGithub,
-  FaPhoneAlt,
-  FaDownload,
-} from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaEnvelope, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import ProfilePic from "../assets/ProfilePic.jpeg";
 
 const Home = () => {

@@ -1,4 +1,3 @@
-import React  from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
@@ -10,10 +9,7 @@ import {
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-
-const Header = ({menuOpen}) => {
- 
-
+const Header = ({ menuOpen }) => {
   return (
     <>
       <div className="navbar">
@@ -50,33 +46,33 @@ const Header = ({menuOpen}) => {
           </ul>
         </div>
       </div>
-          <ul className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-              <li  className="reveal-right">
-                <a href="#home" >
-                  <FontAwesomeIcon icon={faHouse} /> Home
-                </a>
-              </li>
-              <li className="reveal-right">
-                <a href="#about" >
-                  <FontAwesomeIcon icon={faUser} /> About Me
-                </a>
-              </li>
-              <li  className="reveal-right">
-                <a href="#skills" > 
-                  <FontAwesomeIcon icon={faLaptopCode} /> Tech Stack
-                </a>
-              </li>
-              <li className="reveal-right">
-                <a href="#contact" >
-                  <FontAwesomeIcon icon={faEnvelope} /> Contact
-                </a>
-              </li>
-              <li className="reveal-right">
-                <a href="#projects" >
-                  <FontAwesomeIcon icon={faFileLines} /> Projects
-                </a>
-              </li>
-            </ul>
+      <ul className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        <li className="reveal-right">
+          <a href="#home">
+            <FontAwesomeIcon icon={faHouse} /> Home
+          </a>
+        </li>
+        <li className="reveal-right">
+          <a href="#about">
+            <FontAwesomeIcon icon={faUser} /> About Me
+          </a>
+        </li>
+        <li className="reveal-right">
+          <a href="#skills">
+            <FontAwesomeIcon icon={faLaptopCode} /> Tech Stack
+          </a>
+        </li>
+        <li className="reveal-right">
+          <a href="#contact">
+            <FontAwesomeIcon icon={faEnvelope} /> Contact
+          </a>
+        </li>
+        <li className="reveal-right">
+          <a href="#projects">
+            <FontAwesomeIcon icon={faFileLines} /> Projects
+          </a>
+        </li>
+      </ul>
     </>
   );
 };

@@ -3,32 +3,6 @@ import "./App.css";
 import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
-import Resume from "../public/assets/Harshitha_Resume.pdf";
-import OTS from "./assets/OTS.png";
-import PosterBannerTool from "./assets/PosterBannerTool.png";
-import UploadDocTool from "./assets/UploadDocTool.png";
-import GenzFit from "./assets/GenzFit.png";
-import {
-  FaReact,
-  FaHtml5,
-  FaCss3Alt,
-  FaNodeJs,
-  FaDatabase,
-  FaJs,
-  FaSass,
-  FaCloud,
-} from "react-icons/fa";
-import { SiMongodb, SiExpress, SiMysql } from "react-icons/si";
-
-
-import {
-  FaEnvelope,
-  FaLinkedin,
-  FaGithub,
-  FaPhoneAlt,
-  FaDownload,
-} from "react-icons/fa";
 import {
   faHouse,
   faLaptopCode,
@@ -47,9 +21,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
-     const [menuOpen, setMenuOpen] = useState(false);
- 
-
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const revealElements = document.querySelectorAll(
@@ -72,8 +44,6 @@ function App() {
     return () => observer.disconnect(); // cleanup on unmount
   }, []);
 
-
-
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -86,12 +56,6 @@ function App() {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-
-
-
-
-
- 
 
   return (
     <>
@@ -106,7 +70,7 @@ function App() {
         }}
       ></div>
 
-      <Header menuOpen={menuOpen}/>
+      <Header menuOpen={menuOpen} />
 
       <div className="into_backdrop">
         <Home />
