@@ -10,6 +10,7 @@ const Home = () => {
   const roles = [
     "a Full Stack Web Developer",
     "a Frontend Developer",
+    "a Backend Developer",
     "a MERN Stack Developer",
   ];
   useEffect(() => {
