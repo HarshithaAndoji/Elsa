@@ -71,6 +71,8 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+
+
 .navcontent {
   display: flex;
   justify-content: space-between;
@@ -194,6 +196,7 @@ button {
   background-color: #f4f4f4;
   padding-top: 4rem;
   /* width: 98.8vw; */
+    overflow-x: hidden;
 }
 
 .intro_container {
