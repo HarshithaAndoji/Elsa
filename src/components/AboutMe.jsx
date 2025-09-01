@@ -10,7 +10,7 @@ const AboutMe = () => {
                     <p className="reveal-right">
                       I'm <strong>Harshitha Andoji</strong>, a dedicated Full Stack
                       Developer with
-                      <strong> nearly 2 years of professional experience</strong>{" "}
+                      <strong> 2 years of professional experience</strong>{" "}
                       crafting responsive, scalable, and high-performance web
                       applications using the <strong>MERN Stack</strong> (MongoDB,
                       Express.js, React.js, Node.js), along with{" "}

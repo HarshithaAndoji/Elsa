@@ -8,6 +8,7 @@ import {
   FaSass,
   FaNodeJs,
   FaCloud,
+  FaDocker 
 } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiMysql } from "react-icons/si";
 
@@ -22,6 +23,8 @@ const iconMap = {
   SiMongodb: <SiMongodb />,
   SiExpress: <SiExpress />,
   SiMysql: <SiMysql />,
+   FaDocker:<FaDocker />,
+
 };
 
 const Skills = () => {

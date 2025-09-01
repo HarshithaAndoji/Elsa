@@ -48,5 +48,10 @@
     "icon": "FaCloud",
     "name": "Azure Blob",
     "color": "text-info"
+  },
+  {
+    "icon": "FaDocker",
+    "name": "Docker",
+    "color": "text-blue"
   }
 ]
